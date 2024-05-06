@@ -5,6 +5,7 @@ metadata:
   description: Artist Lookup
 
 spec:
+  type: service
   systems:
     - name: Backend System
       description: Manages server-side logic and database interactions.

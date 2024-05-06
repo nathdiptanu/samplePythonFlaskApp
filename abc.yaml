@@ -1,14 +1,44 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Catalog
 metadata:
-  name: artist-web
-  description: The place to be, for great artists
-spec:
-  type: website
-  lifecycle: production
-  owner: artist-relations-team
-  system: artist-engagement-portal
-  dependsOn:
-    - resource:default/artists-db
-  providesApis:
-    - artist-api
+  name: my-backstage-catalog
+relations:
+  - type: owner
+    targets:
+      - kind: User
+        name: john.doe@example.com
+  - type: member
+    targets:
+      - kind: User
+        name: jane.doe@example.com
+  - type: depends-on
+    targets:
+      - kind: API
+        namespace: my-api-group
+        name: my-api
+        version: v1
+users:
+  - metadata:
+      name: john.doe@example.com
+    spec:
+      displayName: John Doe
+  - metadata:
+      name: jane.doe@example.com
+    spec:
+      displayName: Jane Doe
+apis:
+  - metadata:
+      namespace: my-api-group
+      name: my-api
+      version: v1
+    spec:
+      description: |
+        This is the description of my API.
+      openapi: 3.0.0
+      paths:
+        /endpoint:
+          get:
+            summary: Get endpoint
+            responses:
+              '200':
+                description: OK

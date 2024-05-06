@@ -1,9 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  title: "My Catalog"
-  name: backstage
-  description: "Description of my catalog"
+  name: diptanu
+  description: Description of my catalog.
 
 
 systems:

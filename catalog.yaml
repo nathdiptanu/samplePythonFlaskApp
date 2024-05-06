@@ -77,4 +77,3 @@ groups:
     description: Group containing premium users with special privileges.
   - name: Free Users Group
     description: Group containing free users with basic access.
-

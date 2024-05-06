@@ -6,6 +6,7 @@ metadata:
 spec:
   type: service
   owner: team-a
+  lifecycle: experimental
   systems:
     - name: Backend System
       description: Manages server-side logic and database interactions.

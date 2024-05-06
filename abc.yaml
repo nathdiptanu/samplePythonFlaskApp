@@ -1,40 +1,22 @@
 apiVersion: backstage.io/v1alpha1
-kind: Catalog
+kind: Component
 metadata:
-  name: my-backstage-catalog
+  name: artist-web
+  description: The place to be, for great artists
+  labels:
+    example.com/custom: custom_label_value
+  annotations:
+    example.com/service-discovery: artistweb
+    circleci.com/project-slug: github/example-org/artist-website
+  tags:
+    - java
+  links:
+    - url: https://admin.example-org.com
+      title: Admin Dashboard
+      icon: dashboard
+      type: admin-dashboard
 spec:
-  relations:
-    - type: owner
-      target: User:john.doe@example.com
-    - type: member
-      target: User:jane.doe@example.com
-    - type: depends-on
-      target: API:my-api-group:my-api:v1
-  users:
-    - kind: User
-      metadata:
-        name: john.doe@example.com
-      spec:
-        displayName: John Doe
-    - kind: User
-      metadata:
-        name: jane.doe@example.com
-      spec:
-        displayName: Jane Doe
-  apis:
-    - kind: API
-      metadata:
-        namespace: my-api-group
-        name: my-api
-        version: v1
-      spec:
-        description: |
-          This is the description of my API.
-        openapi: 3.0.0
-        paths:
-          /endpoint:
-            get:
-              summary: Get endpoint
-              responses:
-                '200':
-                  description: OK
+  type: website
+  lifecycle: production
+  owner: artist-relations-team
+  system: public-websites

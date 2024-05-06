@@ -55,9 +55,3 @@ apis:
       lifecycle: experimental
       type: graphql
     schema: https://api.example.com/graphql
-
-relations:
-  - type: uses-service
-    source: sample-service
-    target: other-service
-    description: This service uses the other-service for data processing.

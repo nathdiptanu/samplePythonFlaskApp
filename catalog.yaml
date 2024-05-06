@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name:"Backstage app"
   title: "My Catalog"
+  name: backstage
   description: "Description of my catalog"
 
 

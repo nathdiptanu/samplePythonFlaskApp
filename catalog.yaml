@@ -46,10 +46,21 @@ resources:
 apis:
   - name: Authentication API
     description: Provides endpoints for user authentication.
+    relations:
+      - name: User API
+        description: Allows CRUD operations on user data.
   - name: User API
     description: Allows CRUD operations on user data.
+    relations:
+      - name: Music API
+        description: Provides access to music-related data.
+      - name: Playlist API
+        description: Allows manipulation of playlists.
   - name: Music API
     description: Provides access to music-related data.
+    relations:
+      - name: Analytics API
+        description: Provides access to analytics data and insights.
   - name: Playlist API
     description: Allows manipulation of playlists.
   - name: Analytics API
@@ -78,5 +89,7 @@ groups:
     description: Group containing admin users.
   - name: Premium Users Group
     description: Group containing premium users with special privileges.
+    parent: Admin Group
   - name: Free Users Group
     description: Group containing free users with basic access.
+    parent: Admin Group
